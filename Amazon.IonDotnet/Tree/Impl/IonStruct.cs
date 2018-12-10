@@ -282,6 +282,16 @@ namespace Amazon.IonDotnet.Tree.Impl
             writer.StepOut();
         }
 
+        public T GetById<T>(int id) where T : IonValue
+        {
+            ThrowIfNull();
+            var value = values.First(v => v.FieldNameSymbol.Sid == id);
+            if (!(value is T))
+                throw new Exception($"Expected {typeof(T).Name}, got {value.GetType().Name}");
+
+            return value as T;
+        }
+
         private int RemoveUnsafe(string fieldName)
         {
             var ret = this.values.RemoveAll(v =>
