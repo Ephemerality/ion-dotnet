@@ -23,7 +23,7 @@ namespace Amazon.IonDotnet.Internals
     /// <summary>
     /// An immutable, thread-safe shared symbol table. Used for system table.
     /// </summary>
-    internal sealed class SharedSymbolTable : ISymbolTable
+    public sealed class SharedSymbolTable : ISymbolTable
     {
         public static readonly ISymbolTable[] EmptyArray = new ISymbolTable[0];
 
@@ -185,7 +185,7 @@ namespace Amazon.IonDotnet.Internals
             return Ion10SystemSymtab;
         }
 
-        internal static ISymbolTable NewSharedSymbolTable(string name, int version, ISymbolTable priorSymtab, IEnumerable<string> symbols)
+        public static ISymbolTable NewSharedSymbolTable(string name, int version, ISymbolTable priorSymtab, IEnumerable<string> symbols)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
