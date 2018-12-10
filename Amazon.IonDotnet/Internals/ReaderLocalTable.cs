@@ -266,6 +266,8 @@ namespace Amazon.IonDotnet.Internals
             foreach (var import in this.Imports)
             {
                 Debug.Assert(import.IsShared, "import IsShared is false");
+                if (import.IsSystem)
+                    continue;
                 maxId += import.MaxId;
             }
 
