@@ -90,6 +90,13 @@ namespace Amazon.IonDotnet.Builders
             return dg;
         }
 
+        public T LoadSingle<T>(Stream stream) where T : IonValue
+        {
+            var reader = IonReaderBuilder.Build(stream, readerOptions);
+            var dg = WriteDatagram(reader);
+            return dg.Single() as T;
+        }
+
         /// <summary>
         /// Load Ion data from a file. Detecting whether it's binary or Unicode text Ion.
         /// </summary>
