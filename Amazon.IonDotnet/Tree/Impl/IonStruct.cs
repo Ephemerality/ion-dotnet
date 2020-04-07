@@ -282,10 +282,10 @@ namespace Amazon.IonDotnet.Tree.Impl
             writer.StepOut();
         }
 
-        public T GetById<T>(int id) where T : IonValue
+        public IIonValue GetById(int id)
         {
             ThrowIfNull();
-            var value = values.OfType<T>().FirstOrDefault(v => v.FieldNameSymbol.Sid == id);
+            var value = values.FirstOrDefault(v => v.FieldNameSymbol.Sid == id);
             if (value == null)
                 throw new Exception($"Value for ID {id} not found");
 
@@ -295,7 +295,7 @@ namespace Amazon.IonDotnet.Tree.Impl
         public int? GetSymbolIdById(int id)
         {
             ThrowIfNull();
-            return GetById<IonSymbol>(id)?.SymbolValue.Sid;
+            return GetById(id)?.SymbolValue.Sid;
         }
 
         private int RemoveUnsafe(string fieldName)
