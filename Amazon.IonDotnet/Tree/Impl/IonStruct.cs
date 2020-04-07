@@ -21,7 +21,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     using System.Linq;
     using Amazon.IonDotnet.Internals;
 
-    internal sealed class IonStruct : IonContainer, IIonStruct
+    public sealed class IonStruct : IonContainer, IIonStruct
     {
         private List<IIonValue> values;
 

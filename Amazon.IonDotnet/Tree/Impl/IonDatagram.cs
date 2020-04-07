@@ -21,7 +21,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// An ion datagram is a special kind of value which represents a stream of Ion values.
     /// </summary>
-    internal sealed class IonDatagram : IonSequence, IIonDatagram
+    public sealed class IonDatagram : IonSequence, IIonDatagram
     {
         public IonDatagram()
             : base(false)

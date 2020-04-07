@@ -20,7 +20,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     using System.Numerics;
     using Amazon.IonDotnet.Internals;
 
-    internal sealed class IonInt : IonValue, IIonInt
+    public sealed class IonInt : IonValue, IIonInt
     {
         // This mask combine the 4th and 5th bit of the flag byte
         private const int IntSizeMask = 0x18;

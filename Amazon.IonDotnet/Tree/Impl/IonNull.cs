@@ -21,7 +21,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// Represent a null.null value.
     /// </summary>
-    internal sealed class IonNull : IonValue, IIonNull
+    public sealed class IonNull : IonValue, IIonNull
     {
         public IonNull()
             : base(true)

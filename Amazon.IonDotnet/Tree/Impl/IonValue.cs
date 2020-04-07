@@ -30,7 +30,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// Represents a tree view into Ion data. Each <see cref="IonValue" /> is a node in the tree. These values are
     /// mutable and strictly hierarchical.
     /// </summary>
-    internal abstract class IonValue : IIonValue
+    public abstract class IonValue : IIonValue
     {
         private const byte LockedFlag = 0x01;
         private const byte SystemValueFlag = 0x02;
@@ -198,9 +198,7 @@ namespace Amazon.IonDotnet.Tree.Impl
         public bool HasAnnotation(string text)
         {
             if (text == null)
-            {
                 throw new ArgumentNullException(nameof(text));
-            }
 
             return this.annotations != null && this.annotations.Any(a => text.Equals(a.Text));
         }

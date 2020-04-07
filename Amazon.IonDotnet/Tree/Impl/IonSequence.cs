@@ -24,7 +24,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// A container that is a sequence of values.
     /// </summary>
-    internal abstract class IonSequence : IonContainer, IList<IIonValue>, IIonSequence
+    public abstract class IonSequence : IonContainer, IList<IIonValue>, IIonSequence
     {
         private List<IIonValue> children;
 

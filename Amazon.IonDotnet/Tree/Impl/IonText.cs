@@ -19,7 +19,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// Represent Ion textual values.
     /// </summary>
-    internal abstract class IonText : IonValue, IIonText
+    public abstract class IonText : IonValue, IIonText
     {
         protected string stringVal;
 

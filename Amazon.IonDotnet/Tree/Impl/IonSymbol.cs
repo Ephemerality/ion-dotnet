@@ -17,7 +17,7 @@ namespace Amazon.IonDotnet.Tree.Impl
 {
     using Amazon.IonDotnet.Internals;
 
-    internal sealed class IonSymbol : IonText, IIonSymbol
+    public sealed class IonSymbol : IonText, IIonSymbol
     {
         private readonly ImportLocation importLocation;
         private readonly int sid;

@@ -18,7 +18,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     using System;
     using Amazon.IonDotnet.Internals;
 
-    internal sealed class IonDecimal : IonValue, IIonDecimal
+    public sealed class IonDecimal : IonValue, IIonDecimal
     {
         private readonly BigDecimal val;
 

@@ -24,7 +24,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// An Ion clob value.
     /// </summary>
-    internal sealed class IonClob : IonLob, IIonClob
+    public sealed class IonClob : IonLob, IIonClob
     {
         public IonClob(ReadOnlySpan<byte> bytes)
             : base(bytes)

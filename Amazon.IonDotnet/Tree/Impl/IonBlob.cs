@@ -22,7 +22,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// An Ion blob value.
     /// </summary>
-    internal sealed class IonBlob : IonLob, IIonBlob
+    public sealed class IonBlob : IonLob, IIonBlob
     {
         public IonBlob(ReadOnlySpan<byte> bytes)
             : base(bytes)

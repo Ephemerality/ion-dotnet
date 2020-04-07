@@ -19,7 +19,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// A Ion List value.
     /// </summary>
-    internal sealed class IonList : IonSequence, IIonList
+    public sealed class IonList : IonSequence, IIonList
     {
         public IonList()
             : this(false)

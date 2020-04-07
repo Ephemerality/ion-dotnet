@@ -24,7 +24,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// Ion value representing a floating point number.
     /// </summary>
-    internal sealed class IonFloat : IonValue, IIonFloat
+    public sealed class IonFloat : IonValue, IIonFloat
     {
         private readonly double d;
 

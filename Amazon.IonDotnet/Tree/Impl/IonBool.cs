@@ -20,7 +20,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// Ion object holding a boolean value.
     /// </summary>
-    internal sealed class IonBool : IonValue, IIonBool
+    public sealed class IonBool : IonValue, IIonBool
     {
         public IonBool(bool value)
             : base(false)

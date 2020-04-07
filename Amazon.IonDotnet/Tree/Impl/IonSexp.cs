@@ -19,7 +19,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// An Ion S-exp value.
     /// </summary>
-    internal sealed class IonSexp : IonSequence, IIonSexp
+    public sealed class IonSexp : IonSequence, IIonSexp
     {
         public IonSexp()
             : this(false)

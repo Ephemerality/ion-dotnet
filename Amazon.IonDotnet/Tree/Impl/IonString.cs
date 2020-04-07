@@ -21,7 +21,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// An Ion string value.
     /// </summary>
-    internal sealed class IonString : IonText, IIonString
+    public sealed class IonString : IonText, IIonString
     {
         public IonString(string value)
             : base(value, value is null)

@@ -22,7 +22,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// <summary>
     /// A value that holds a blob of byte data.
     /// </summary>
-    internal abstract class IonLob : IonValue, IIonLob
+    public abstract class IonLob : IonValue, IIonLob
     {
         protected byte[] byteBuffer;
 

@@ -24,7 +24,7 @@ namespace Amazon.IonDotnet.Tree.Impl
     /// Base class for all container type (List,Struct,Sexp,Datagram) Ion values.
     /// This class also implements the <see cref="ICollection"/> interface.
     /// </summary>
-    internal abstract class IonContainer : IonValue, ICollection<IIonValue>, IIonContainer
+    public abstract class IonContainer : IonValue, ICollection<IIonValue>, IIonContainer
     {
         protected IonContainer(bool isNull)
             : base(isNull)
