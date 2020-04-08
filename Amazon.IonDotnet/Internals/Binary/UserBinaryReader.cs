@@ -91,10 +91,8 @@ namespace Amazon.IonDotnet.Internals.Binary
                     return;
                 }
 
-                this.SymbolTable = SharedSymbolTable.GetSystem(1);
-
-                // user don't need to see this symbol so continue here
-                this.moveNextNeeded = true;
+                // User don't need to see this symbol so continue here.
+                moveNextNeeded = true;
             }
             else if (this.valueTid == BinaryConstants.TidStruct)
             {
