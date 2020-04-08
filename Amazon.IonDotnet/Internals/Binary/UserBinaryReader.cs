@@ -35,14 +35,10 @@ namespace Amazon.IonDotnet.Internals.Binary
 
         public override IonType MoveNext()
         {
-            this.GetSymbolTable();
-            if (!this.HasNext())
-            {
+            if (!HasNext())
                 return IonType.None;
-            }
-
-            this.moveNextNeeded = true;
-            return this.valueType;
+            moveNextNeeded = true;
+            return valueType;
         }
 
         protected override bool HasNext()
