@@ -175,7 +175,7 @@ namespace Amazon.IonDotnet.Internals
         /// </summary>
         /// <param name="version">Ion version.</param>
         /// <returns>System symbol table.</returns>
-        internal static ISymbolTable GetSystem(int version)
+        public static ISymbolTable GetSystem(int version)
         {
             if (version != 1)
             {
