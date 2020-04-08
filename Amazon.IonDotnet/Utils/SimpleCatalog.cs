@@ -25,7 +25,7 @@ namespace Amazon.IonDotnet.Utils
     /// <summary>
     /// A basic implementation for a mutable catalog.
     /// </summary>
-    public class SimpleCatalog : IMutableCatalog, IEnumerable<ISymbolTable>
+    public class SimpleCatalog : IMutableCatalog
     {
         private static readonly MaxFirstComparer Comparer = new MaxFirstComparer();
 

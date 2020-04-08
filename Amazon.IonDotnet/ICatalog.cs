@@ -1,9 +1,11 @@
-﻿namespace Amazon.IonDotnet
+﻿using System.Collections.Generic;
+
+namespace Amazon.IonDotnet
 {
     /// <summary>
     /// A collection of shared symbol tables.
     /// </summary>
-    public interface ICatalog
+    public interface ICatalog : IEnumerable<ISymbolTable>
     {
         /// <summary>
         /// Gets the symbol table with a specific name with the latest version.

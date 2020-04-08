@@ -17,6 +17,7 @@ namespace Amazon.IonDotnet.Internals.Binary
 {
     using System.Diagnostics;
     using System.IO;
+    using System.Linq;
 
     /// <inheritdoc />
     /// <summary>
@@ -31,6 +32,8 @@ namespace Amazon.IonDotnet.Internals.Binary
             : base(input)
         {
             this.catalog = catalog;
+            if (catalog != null)
+                SymbolTable = catalog.First();
         }
 
         public override IonType MoveNext()
