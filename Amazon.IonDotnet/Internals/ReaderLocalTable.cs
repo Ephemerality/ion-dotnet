@@ -30,10 +30,9 @@ namespace Amazon.IonDotnet.Internals
 
         private int importedMaxId;
 
-        internal ReaderLocalTable(ISymbolTable systemTable)
+        internal ReaderLocalTable(ISymbolTable symbolTable)
         {
-            Debug.Assert(systemTable.IsSystem, "systemTable IsSystem is false");
-            this.Imports = new List<ISymbolTable> { systemTable };
+            Imports = new List<ISymbolTable> {symbolTable};
         }
 
         public string Name => null;
