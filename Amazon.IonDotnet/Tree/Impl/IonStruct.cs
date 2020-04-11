@@ -281,23 +281,7 @@ namespace Amazon.IonDotnet.Tree.Impl
 
             writer.StepOut();
         }
-
-        public IIonValue GetById(int id)
-        {
-            ThrowIfNull();
-            var value = values.FirstOrDefault(v => v.FieldNameSymbol.Sid == id);
-            if (value == null)
-                throw new Exception($"Value for ID {id} not found");
-
-            return value;
-        }
-
-        public int? GetSymbolIdById(int id)
-        {
-            ThrowIfNull();
-            return GetById(id)?.SymbolValue.Sid;
-        }
-
+    
         private int RemoveUnsafe(string fieldName)
         {
             var ret = this.values.RemoveAll(v =>
