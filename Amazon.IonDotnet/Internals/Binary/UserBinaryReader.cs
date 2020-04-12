@@ -28,12 +28,12 @@ namespace Amazon.IonDotnet.Internals.Binary
     {
         private readonly ICatalog catalog;
 
-        internal UserBinaryReader(Stream input, ICatalog catalog = null)
+        internal UserBinaryReader(Stream input, ICatalog catalog = null, ISymbolTable initialSymbolTable = null)
             : base(input)
         {
             this.catalog = catalog;
-            if (catalog != null)
-                SymbolTable = catalog.First();
+            if (initialSymbolTable != null)
+                SymbolTable = initialSymbolTable;
         }
 
         public override IonType MoveNext()

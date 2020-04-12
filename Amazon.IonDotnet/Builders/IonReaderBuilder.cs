@@ -17,6 +17,7 @@ namespace Amazon.IonDotnet.Builders
 {
     using System;
     using System.IO;
+    using System.Linq;
     using System.Text;
     using Amazon.IonDotnet.Internals.Binary;
     using Amazon.IonDotnet.Internals.Text;
@@ -38,6 +39,7 @@ namespace Amazon.IonDotnet.Builders
         public ReaderFormat Format;
         public Encoding Encoding;
         public ICatalog Catalog;
+        public ISymbolTable InitialSymbolTable;
     }
 
     /// <summary>
@@ -89,7 +91,7 @@ namespace Amazon.IonDotnet.Builders
                 case ReaderFormat.Detect:
                     return DetectFormatAndBuild(stream, options);
                 case ReaderFormat.Binary:
-                    return new UserBinaryReader(stream, options.Catalog);
+                    return new UserBinaryReader(stream, options.Catalog, options.InitialSymbolTable);
                 case ReaderFormat.Text:
                     return new UserTextReader(stream, options.Catalog);
             }
@@ -125,7 +127,7 @@ namespace Amazon.IonDotnet.Builders
             if (IsBinaryData(initialBytes.Slice(0, bytesRead)))
             {
                 // skipping the version marker should be fine for binary reader
-                return new UserBinaryReader(stream, options.Catalog);
+                return new UserBinaryReader(stream, options.Catalog, options.InitialSymbolTable);
             }
 
             return didSeek
