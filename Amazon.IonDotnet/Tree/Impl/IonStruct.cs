@@ -241,6 +241,11 @@ namespace Amazon.IonDotnet.Tree.Impl
             return this[fieldName];
         }
 
+        public override T GetField<T>(string fieldName)
+        {
+            return this[fieldName] as T;
+        }
+
         public override void SetField(string fieldName, IIonValue value)
         {
             this[fieldName] = value;

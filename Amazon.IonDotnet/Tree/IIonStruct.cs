@@ -21,6 +21,8 @@ namespace Amazon.IonDotnet.Tree
 
         IIonValue GetField(string fieldName);
 
+        T GetField<T>(string fieldName) where T : class, IIonValue;
+
         void SetField(string fieldName, IIonValue value);
 
         bool RemoveField(string fieldName);

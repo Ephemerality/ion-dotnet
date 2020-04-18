@@ -381,6 +381,11 @@ namespace Amazon.IonDotnet.Tree.Impl
             }
         }
 
+        public virtual T GetField<T>(string fieldName) where T : class, IIonValue
+        {
+            throw new InvalidOperationException(GetErrorMessage());
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected bool IsSystemValue() => this.HasFlag(SystemValueFlag);
 
